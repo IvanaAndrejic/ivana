@@ -1,0 +1,326 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header nav {
+    text-align: right;
+    margin: 0.5rem 1rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #007BFF;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+header nav a:hover {
+    background-color: #0056b3;
+}
+
+#info {
+    font-size: 2rem;  
+    color: black;   
+    margin-right: 10px; 
+    cursor: pointer; 
+    position: relative; 
+}
+
+#info:hover::after {
+    content: "Na svakih pet iznajmljenih filmova dobijate jedan gratis!"; 
+    position: absolute;
+    bottom: 150%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: white; 
+    color: gray; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    white-space: nowrap; 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
+}
+
+#info:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.spinner {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007BFF;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1000;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+header nav a {
+    margin-right: 10px;
+}
+header nav a:first-child {
+    color: red;
+}
+
+
+.search-filter {
+    margin: 1rem auto;
+    max-width: 400px;
+    text-align: center;
+}
+
+.search-filter input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.movie {
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.movie h3 {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.movie p {
+    font-size: 14px;
+    color: #666;
+}
+
+.pagination {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.pagination button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
+#genres {
+    display: flex;
+    flex-wrap: nowrap;  
+    gap: 15px; 
+    overflow-x: auto; 
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  #genres div {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    font-size: 14px; 
+  }
+  
+  #genres input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0; 
+  }
+  
+  #genres label {
+    cursor: pointer;
+    user-select: none; 
+    font-size: 14px;
+    color: #555; 
+  }
+  
+  #genres input[type="checkbox"]:checked + label {
+    color: #e74c3c; 
+    font-weight: bold;
+  }
+
+.fav-item-img, .imgCart {
+    width: 50px;  
+    height: 75px;  
+    object-fit: cover;  
+    margin-right: 10px; 
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    justify-content: space-between; 
+}
+  
+.cart-item h3, .cart-item p {
+    margin: 0;
+    padding: 0;
+}
+
+.cart-item .deleteItem {
+    margin-left: 10px; 
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-item .deleteItem:hover {
+    background-color: #c0392b;
+}  
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    overflow: auto;
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 20% auto; 
+    padding: 15px; 
+    border: 1px solid #888;
+    width: 50%; 
+    max-width: 500px; 
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  #close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 22px; 
+    font-weight: bold;
+  }
+  
+  #close-modal:hover,
+  #close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #modal-title {
+    font-size: 20px; 
+    font-weight: bold;
+  }
+  
+  #modal-description {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  
+  

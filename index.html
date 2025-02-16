@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video klub</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <h1>VIDEO KLUB</h1>
+        <span id="info">&#128712;</span>
+        <nav>
+            <a href="favorites.html" id="favorites-link"
+              >❤ (<span id="favorites-count">0</span>)</a
+            >
+            <a href="cart.html" id="cart-link"
+              >&#128722 (<span id="cart-count">0</span>)</a
+            >
+          </nav>
+          <div class="search-filter">
+            <input type="text" id="search" placeholder="Pretraži popularne filmove..." />
+          </div>
+          <div id="genres">
+            
+          </div>
+    </header>
+    <main>
+        <div class="movie-container" id="movie-container">
+        
+        </div>
+        <div class="pagination">
+            <button id="prev-page"><<</button>
+            <span id="page-info"></span>
+            <button id="next-page">>></button>
+        </div>
+    </main>
+    <div id="spinner" class="spinner"></div>
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-poster" src="" alt="Poster" />
+            <p id="modal-description"></p>
+            <iframe id="modal-trailer" width="100%" height="150" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+      <a href="cart.html">Pregledaj narudžbinu</a>
+    </footer>
+    <script src="index.js"></script> 
+</body>
+</html>
