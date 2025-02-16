@@ -4,7 +4,7 @@ function renderFav() {
   const favorites = JSON.parse(localStorage.getItem("fav")) || [];
 
   if (favorites.length == 0) {
-    favItems.textContent = "Lista omiljenih filmova je prazna!";
+    favItems.textContent = "Lista omiljenih filmova je prazna!!!";
     return;
   }
 
